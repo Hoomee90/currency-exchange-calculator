@@ -3,12 +3,12 @@ export default class ExchangeService {
 
   }
   
-  shouldCall() {
+  shouldCall(currency) {
 
     switch (true) {
       case !(`rateObj` in this):
         return true;
-      case this.rateObj:
+      case this.rateObj[`base_code`] !== currency:
         return true;
       case Date.now() >= this.rateObj[`time_next_update_utc`]:
         return true;
@@ -34,7 +34,7 @@ export default class ExchangeService {
   }
 
   async get(currency) {
-    if (this.shouldCall()) {
+    if (this.shouldCall(currency)) {
       return await this.call(currency);
     } else {
       return this.rateObj;
