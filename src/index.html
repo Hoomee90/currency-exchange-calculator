@@ -1,46 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
   <title>Exchange Rate Calculator</title>
 </head>
 <body>
   <body class="container">
     <h1 class="my-3">Currency Exchanger</h1>
-    <form id="search" class="row g-3">
-      <label for="dollar-input" class="form-label mb-0">Number of dollars</label>
-      <div class="col-auto">
-        <input type="number" class="form-control" id="dollar-input" placeholder="USD">
-      </div>
-      <div class="col-auto">
-        <div class="dropdown" id="currency-dropdown">
-          <button class="btn btn-primary dropdown-toggle" id="currency-button" data-bs-toggle="dropdown" type="button" data-bs-auto-close="outside">Currency</button>
-          <div class="dropdown-menu">
-            <div class="dropdown-item form-check">
-              <input class="form-check-input" id="canadain" value="CAD" type="radio" name="currencies">
-              <label class="form-check-label" for="canadain">Canadian Dollars</label>
-            </div>
-            <div class="dropdown-item form-check">
-              <input class="form-check-input" id="swiss" value="CHF" type="radio" name="currencies">
-              <label class="form-check-label" for="swiss">Swiss Francs</label>
-            </div>
-            <div class="dropdown-item form-check">
-              <input class="form-check-input" id="costa-rican" value="CUP" type="radio" name="currencies">
-              <label class="form-check-label" for="costa-rican">Costa Rican Colons</label>
-            </div>
-            <div class="dropdown-item form-check">
-              <input class="form-check-input" id="europian" value="EUR" type="radio" name="currencies">
-              <label class="form-check-label" for="europian">Euros</label>
-            </div>
-            <div class="dropdown-item form-check">
-              <input class="form-check-input" id="south-korean" value="KRW" type="radio" name="currencies">
-              <label class="form-check-label" for="south-korean">South Korean Won</label>
-            </div>
+    <form id="search" class="input-group">
+      <input type="number" class="form-control" id="dollar-input">
+      <span class="input-group-text">Dollars to</span>
+      <div class="dropdown" id="currency-dropdown">
+        <button class="btn btn-dark dropdown-toggle input-group-text" id="currency-button" data-bs-toggle="dropdown" type="button" data-bs-auto-close="outside">Currency</button>
+        <div class="dropdown-menu">
+          <div class="dropdown-item form-check">
+            <input class="form-check-input" id="canadain" value="CAD" type="radio" name="currencies">
+            <label class="form-check-label" for="canadain">Canadian Dollars</label>
+          </div>
+          <div class="dropdown-item form-check">
+            <input class="form-check-input" id="swiss" value="CHF" type="radio" name="currencies">
+            <label class="form-check-label" for="swiss">Swiss Francs</label>
+          </div>
+          <div class="dropdown-item form-check">
+            <input class="form-check-input" id="costa-rican" value="CUP" type="radio" name="currencies">
+            <label class="form-check-label" for="costa-rican">Costa Rican Colons</label>
+          </div>
+          <div class="dropdown-item form-check">
+            <input class="form-check-input" id="europian" value="EUR" type="radio" name="currencies">
+            <label class="form-check-label" for="europian">Euros</label>
+          </div>
+          <div class="dropdown-item form-check">
+            <input class="form-check-input" id="south-korean" value="KRW" type="radio" name="currencies">
+            <label class="form-check-label" for="south-korean">South Korean Won</label>
           </div>
         </div>
       </div>
-      <div class="col-auto align-self-end">
-        <button id="search-submit" class="btn btn-primary" type="submit">Go</button>
-      </div>
+      <button id="search-submit" class="btn btn-dark" type="submit">Go</button>
     </form>
     <p id="display" class="d-none"></p>
 </body>
