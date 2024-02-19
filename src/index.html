@@ -7,29 +7,31 @@
   <body class="container">
     <h1 class="my-3">Currency Exchanger</h1>
     <form id="search" class="row g-3">
+      <label for="dollar-input" class="form-label mb-0">Number of dollars</label>
       <div class="col-auto">
-        <label for="dollar-input" class="form-label">Number of dollars</label>
         <input type="number" class="form-control" id="dollar-input" placeholder="USD">
+      </div>
+      <div class="col-auto">
         <div class="dropdown" id="currency-dropdown">
-          <button class="btn btn-primary dropdown-toggle" id="currency-button" data-bs-toggle="dropdown" type="button">Currency</button>
+          <button class="btn btn-primary dropdown-toggle" id="currency-button" data-bs-toggle="dropdown" type="button" data-bs-auto-close="outside">Currency</button>
           <div class="dropdown-menu">
-            <div class="dropdown-item form-check mx-2">
+            <div class="dropdown-item form-check">
               <input class="form-check-input" id="canadain" value="CAD" type="radio" name="currencies">
               <label class="form-check-label" for="canadain">Canadian Dollars</label>
             </div>
-            <div class="dropdown-item form-check mx-2">
+            <div class="dropdown-item form-check">
               <input class="form-check-input" id="swiss" value="CHF" type="radio" name="currencies">
               <label class="form-check-label" for="swiss">Swiss Francs</label>
             </div>
-            <div class="dropdown-item form-check mx-2">
+            <div class="dropdown-item form-check">
               <input class="form-check-input" id="costa-rican" value="CUP" type="radio" name="currencies">
               <label class="form-check-label" for="costa-rican">Costa Rican Colons</label>
             </div>
-            <div class="dropdown-item form-check mx-2">
+            <div class="dropdown-item form-check">
               <input class="form-check-input" id="europian" value="EUR" type="radio" name="currencies">
               <label class="form-check-label" for="europian">Euros</label>
             </div>
-            <div class="dropdown-item form-check mx-2">
+            <div class="dropdown-item form-check">
               <input class="form-check-input" id="south-korean" value="KRW" type="radio" name="currencies">
               <label class="form-check-label" for="south-korean">South Korean Won</label>
             </div>
