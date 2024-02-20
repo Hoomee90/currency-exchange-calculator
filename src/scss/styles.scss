@@ -8,10 +8,15 @@ $form-check-padding-start: 1.5em;
 }
 
 #currency-button {
-  border-radius: 0%;
+  border-radius: inherit;
 }
 
-.btn-dark {
+
+input#dollar-input, .btn-dark {
   border: $input-border-width solid $input-group-addon-border-color;
   background-color: var(--bs-tertiary-bg);
+}
+
+.input-group-text {
+  background-color: var(--bs-body-bg);
 }
