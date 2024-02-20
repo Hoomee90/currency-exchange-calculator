@@ -21,7 +21,7 @@ async function handleSearch(e) {
       throw new Error (`The selected currency is (somehow) not present in the exchange rate data`);
     }
     document.querySelector(`#display`).classList.remove(`d-none`);
-    console.log(exchange);
+    console.log(exchangeServiceObj.exchangeTo(currencyInput.value, numberInput))
   } catch(error) {
     handleError(error);
   }

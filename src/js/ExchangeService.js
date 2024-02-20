@@ -1,12 +1,15 @@
 export default class ExchangeService {
   constructor() {
-
+    this.rateObj = null;
   }
   
-  shouldCall(currency) {
+  exchangeTo(into, amount) {
+    return this.rateObj.conversion_rates[`${into}`] * amount
+  }
 
+  shouldCall(currency) {
     switch (true) {
-      case !(`rateObj` in this):
+      case !(this.rateObj):
         return true;
       case !Object.hasOwn(this.rateObj, `base_code`):
         return true;
@@ -20,7 +23,7 @@ export default class ExchangeService {
   }
 
   async call(currency) {
-    delete this.rateObj;
+    this.rateObj = null;
     try {
       const response = await fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/${currency}`);
       const jsonResponse = await response.json();
