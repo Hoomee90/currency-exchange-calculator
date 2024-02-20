@@ -9,12 +9,13 @@ async function handleSearch(e) {
   
   try {
     const currencyInput = document.querySelector(`#currency-dropdown input:checked`);
-    const numberInput = document.querySelector(`#dollar-input`).value;
+    let numberInput = document.querySelector(`#dollar-input`).value;
 
     // this is bad use of try and catch, but it doesn't really matter
     if(!currencyInput || Math.sign(numberInput) !== 1) {
       throw new Error(`Please correctly fill out all fields of the form`);
     }
+    numberInput = parseFloat(numberInput).toFixed(2);
     const exchange = await exchangeServiceObj.get(`USD`);
     if (exchange instanceof Error) {
       throw exchange;
@@ -42,8 +43,13 @@ function displayResult(input, result, currency) {
   display.classList.remove(`d-none`);
 }
 
+function changeDropdown(e) {
+  document.querySelector(`#currency-button`).innerText = e.target.nextElementSibling.innerText;
+}
+
 window.addEventListener(`load`, () => {
   document.querySelector(`#search`).addEventListener(`submit`, handleSearch);
+  document.querySelectorAll(`input[name='currencies']`).forEach(el => el.addEventListener(`change`, changeDropdown));
 })
 
 let exchangeServiceObj = new ExchangeService();
