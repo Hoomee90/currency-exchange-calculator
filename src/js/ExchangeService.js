@@ -8,6 +8,8 @@ export default class ExchangeService {
     switch (true) {
       case !(`rateObj` in this):
         return true;
+      case !Object.hasOwn(this.rateObj, `base_code`):
+        return true;
       case this.rateObj[`base_code`] !== currency:
         return true;
       case Date.now() >= this.rateObj[`time_next_update_utc`]:
@@ -23,7 +25,7 @@ export default class ExchangeService {
       const response = await fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/${currency}`);
       const jsonResponse = await response.json();
       if (response.status !== 200 || jsonResponse.result === `error`) {
-        const errorMsg = `There was an error accessing the exchange rate data for currency '${currency}' \n ${response.status} ${jsonResponse[`error-type`]}`;
+        const errorMsg = `There was an error accessing the exchange rate data for currency '${currency}' ${response.status} ${jsonResponse[`error-type`]}`;
         throw new Error(errorMsg);
       }
       this.rateObj = jsonResponse;
