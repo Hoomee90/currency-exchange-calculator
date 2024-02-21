@@ -1,16 +1,17 @@
-# _{Application Name}_
+# Currency Exchanger
 
 #### By **Samantha Callie**
 
-#### _{Brief description of application}_
+#### Convert USD into Canadian Dollars, Swiss Francs, Costa Rican Colons, Euros, South Korean Won
 
 ## Technologies Used
 
 * HTML
 * JS
+* CSS
+* Sass
 * Webpack
-* Jest
-* _{other stuff too}_
+* Bootstrap
 
 ## Description
 
@@ -18,19 +19,20 @@ _{I really hope you understand what a description is.}_
 
 ## Setup/Installation Requirements
 
-* Clone repository
-* Using your favorite command line console, run `npm run build` (requires npm) in the top level directory
-* Navigate to the newly-generated scr directory and open index.html
-* _and all_
-* _the other_
-* _instructions_
-
-_{awawawaw why do I need to spend so much effort writing the setup instructions just run it dunkass.}_
+* Press the green <> Code button and select Download ZIP
+* Unzip file
+* Navigate to the top level of the directory
+* Once there, create a new file and title it .env
+* Go to https://app.exchangerate-api.com/ and press the blue button title get Free Key
+* Go through the account creation process, then copy your new API key on the dashboard
+* In the `.env` file, type `API_KEY=` then paste your key such that the file contains nothing but `API_KEY=YOURKEYHERE`
+* With npm installed, `run npm i` on the command line
+* After the dependencies are installed, run `npm run build`, navigate to the newly generated dist directory and open its `index.html` file in your browser
+* Alternatively, you can run `npm run start` and open http://localhost:8080/ in your browser to locally serve it
 
 ## Known Bugs
 
-* _Any known issues_
-*  _go here_
+* There are no known bugs at this time
 
 ## License
 
