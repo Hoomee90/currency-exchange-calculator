@@ -12,10 +12,11 @@
 * Sass
 * Webpack
 * Bootstrap
+* [ExchangeRate-API](https://app.exchangerate-api.com/)
 
 ## Description
 
-_{I really hope you understand what a description is.}_
+This site allows users to enter an amount of USD into a form, and choose from one of Canadian Dollars, Swiss Francs, Costa Rican Colons, Euros, South Korean Won. They will then see the value of the inputted USD in the inputted currency, as according to the data from ExchangeRathe-API.
 
 ## Setup/Installation Requirements
 
@@ -26,7 +27,7 @@ _{I really hope you understand what a description is.}_
 * Go to https://app.exchangerate-api.com/ and press the blue button title get Free Key
 * Go through the account creation process, then copy your new API key on the dashboard
 * In the `.env` file, type `API_KEY=` then paste your key such that the file contains nothing but `API_KEY=YOURKEYHERE`
-* With npm installed, `run npm i` on the command line
+* With npm installed, run `run npm i` on the command line
 * After the dependencies are installed, run `npm run build`, navigate to the newly generated dist directory and open its `index.html` file in your browser
 * Alternatively, you can run `npm run start` and open http://localhost:8080/ in your browser to locally serve it
 
